@@ -130,33 +130,33 @@
 		
 		.scrolling-panel {
     width: 100%;
-    overflow: hidden;
+    overflow-x: auto;
     white-space: nowrap;
     position: relative;
     background: transparent;
     margin-top: 40px;
+    cursor: grab;
+    scroll-behavior: smooth;
+}
+
+.scrolling-panel:active {
+    cursor: grabbing;
 }
 
 .scrolling-content {
     display: flex;
     gap: 20px; /* Space between images */
-    animation: scrollImages 20s linear infinite;
+    padding: 10px;
 }
 
 .scrolling-content img {
     height: 400px;
     object-fit: cover;
     border-radius: 10px;
+    user-select: none; /* Prevents text/image selection while dragging */
+    pointer-events: none; /* Avoids accidental clicks while dragging */
 }
 
-@keyframes scrollImages {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
 
 		
     </style>
@@ -201,15 +201,41 @@
         <img src="Screenshots/image4.png" alt="Image 4">
         <img src="Screenshots/image5.png" alt="Image 5">
         <img src="Screenshots/image6.png" alt="Image 5">
-        <!-- Duplicate images for seamless scrolling -->
-        <img src="Screenshots/image1.png" alt="Image 1">
-        <img src="Screenshots/image2.png" alt="Image 2">
-        <img src="Screenshots/image3.png" alt="Image 3">
-        <img src="Screenshots/image4.png" alt="Image 4">
-        <img src="Screenshots/image5.png" alt="Image 5">
-        <img src="Screenshots/image6.png" alt="Image 5">
     </div>
 </div>
+
+<script>
+    const scrollingPanel = document.querySelector('.scrolling-panel');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    scrollingPanel.addEventListener('mousedown', (e) => {
+        isDown = true;
+        scrollingPanel.classList.add('active');
+        startX = e.pageX - scrollingPanel.offsetLeft;
+        scrollLeft = scrollingPanel.scrollLeft;
+    });
+
+    scrollingPanel.addEventListener('mouseleave', () => {
+        isDown = false;
+        scrollingPanel.classList.remove('active');
+    });
+
+    scrollingPanel.addEventListener('mouseup', () => {
+        isDown = false;
+        scrollingPanel.classList.remove('active');
+    });
+
+    scrollingPanel.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - scrollingPanel.offsetLeft;
+        const walk = (x - startX) * 2; // Increase drag speed
+        scrollingPanel.scrollLeft = scrollLeft - walk;
+    });
+</script>
+
     
     <div class="about">
         <h2>About Me</h2>
