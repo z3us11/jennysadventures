@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="Logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Info Page</title>
+    <title>Jenny's Adventures</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -11,62 +13,105 @@
             box-sizing: border-box;
         }
         body {
-            font-family: Arial, sans-serif;
-            background-color: #111;
-            color: white;
+            font-family: 'Press Start 2P', cursive;
+            background: linear-gradient(135deg, #b3e5fc, #ce93d8, #fff9c4);
+            color: #225A95;
             text-align: center;
-            padding: 20px;
+            overflow-x: hidden;
+            padding: 40px;
         }
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
-            width: 100vw;
+            gap: 40px;
+            width: 100%;
         }
         .panel {
-            width: 80%;
-            max-width: 800px;
-            height: 400px;
+            width: 90vw;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             position: relative;
-            border-radius: 10px;
+            border-radius: 15px;
         }
         .panel img {
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: cover;
-            border-radius: 10px;
         }
         .wishlist {
             position: absolute;
-            bottom: 20px;
+            bottom: 25px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.7);
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 18px;
         }
         .wishlist a {
-            color: cyan;
-            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 8px;
+            padding: 10px 15px;
+            color: #225A95;
             font-weight: bold;
-        }
-        .links {
-            margin-top: 20px;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px;
-            border-radius: 5px;
-        }
-        .links a {
-            color: cyan;
+            font-size: 14px;
             text-decoration: none;
-            margin: 0 10px;
-            font-size: 16px;
+            border: none;
+        }
+        .wishlist img {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+        }
+        .itchio {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .itchio a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 8px;
+            width: 300px;
+            height: 100px;
+        }
+        .itchio img {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        .about {
+            margin-top: 40px;
+            width: 100%;
+            background: white;
+            padding: 40px;
+            color: #225A95;
+            text-align: left;
+            line-height: 1.6;
+        }
+        .video-section {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .video-section iframe {
+            width: 80%;
+            height: 600px;
+            border-radius: 10px;
+        }
+        .trototype {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -74,15 +119,38 @@
     <div class="container">
         <div class="panel">
             <img src="Intro.gif" alt="Intro GIF">
-            <div class="wishlist"><a href="#">Wishlist on Steam</a></div>
+            <div class="wishlist">
+                <a href="https://store.steampowered.com/app/3149660/Jennys_Adventures/">
+                    <img src="Steam.png" alt="Steam Logo"> Wishlist on Steam
+                </a>
+            </div>
         </div>
         <div class="panel">
             <img src="Factsheet.gif" alt="Factsheet GIF">
         </div>
+        <div class="video-section">
+            <iframe src="https://www.youtube.com/embed/zRZ8Jb88SoM" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="panel">
+            <img src="Gameplay.png" alt="Gameplay PNG">
+        </div>
+        <div class="panel">
+            <img src="Aesthetics.gif" alt="Aesthetics GIF">
+        </div>
     </div>
-    <div class="links">
-        <a href="#">Game Website</a>
-        <a href="#">More Info</a>
+    
+    <div class="itchio">
+        <a href="https://pranavgaur.itch.io/cat-platformer">
+            <img src="itchio.png" alt="Itch.io Logo">
+        </a>
     </div>
+    
+    <div class="about">
+        <h2>About Me</h2>
+        <br>
+        <p>Hi! I'm Pranav Gaur and this is Jenny's Adventures. I'm a Unity Game Developer who loves video games and new experiences. 
+        This is my attempt to capture what video games means to me and what I have learned about them. Hope you enjoy playing this game as much as I enjoyed making it. Peace <3! </p>
+    </div>
+    
 </body>
 </html>
