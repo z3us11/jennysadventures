@@ -126,6 +126,39 @@
             height: 600px;
             border-radius: 10px;
         }
+		
+		
+		.scrolling-panel {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    background: transparent;
+    margin-top: 40px;
+}
+
+.scrolling-content {
+    display: flex;
+    gap: 20px; /* Space between images */
+    animation: scrollImages 20s linear infinite;
+}
+
+.scrolling-content img {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+@keyframes scrollImages {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+		
     </style>
 </head>
 <body>
@@ -151,12 +184,32 @@
             <img src="Aesthetics.gif" alt="Aesthetics GIF">
         </div>
     </div>
-    
-    <div class="itchio">
+	<br>
+	<br>
+	<iframe frameborder="0" src="https://itch.io/embed/2749815" width="208" height="167"><a href="https://pranavgaur.itch.io/cat-platformer">Jenny's Playground by Pranav Gaur</a></iframe>
+    <!-- <div class="itchio">
         <a href="https://pranavgaur.itch.io/cat-platformer">
             <img src="itchio.png" alt="Itch.io Logo">
         </a>
+    </div> -->
+	
+	<div class="scrolling-panel">
+    <div class="scrolling-content">
+        <img src="Screenshots/image1.png" alt="Image 1">
+        <img src="Screenshots/image2.png" alt="Image 2">
+        <img src="Screenshots/image3.png" alt="Image 3">
+        <img src="Screenshots/image4.png" alt="Image 4">
+        <img src="Screenshots/image5.png" alt="Image 5">
+        <img src="Screenshots/image6.png" alt="Image 5">
+        <!-- Duplicate images for seamless scrolling -->
+        <img src="Screenshots/image1.png" alt="Image 1">
+        <img src="Screenshots/image2.png" alt="Image 2">
+        <img src="Screenshots/image3.png" alt="Image 3">
+        <img src="Screenshots/image4.png" alt="Image 4">
+        <img src="Screenshots/image5.png" alt="Image 5">
+        <img src="Screenshots/image6.png" alt="Image 5">
     </div>
+</div>
     
     <div class="about">
         <h2>About Me</h2>
